@@ -55,7 +55,7 @@ def play():
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
 
-#Función para eñ submenú COMER
+#Función para el submenú COMER
 def comer():
     print("¿Qué deseas jugar?\n")
     print("1) Comer fruta.")
