@@ -73,3 +73,22 @@ def comer():
                 break
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
+
+#Función para el submenú 
+def dormir():
+    print("¿Qué tanto tiempo deseas dormir?\n")
+    print("1) Dormir una siesta.")
+    print("2) Dormir toda la noche.")
+    print("3) No dormir.")
+    while True:
+        opc = int(input("Ingresa una opción para jugar (1, 2 o 3): "))
+        match opc:
+            case 1:
+                print("Dormir toda la noche te ayudará a recuperar tu energía por completo")
+            case 2:
+                print("Dormir una siesta te ayudará a recuperar 20 puntos de energía.")
+            case 3:
+                print("Dormiremos más tarde.")
+                break
+            case _: 
+                print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
