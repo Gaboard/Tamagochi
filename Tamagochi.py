@@ -54,3 +54,22 @@ def play():
                 break
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
+
+#Función para eñ submenú COMER
+def comer():
+    print("¿Qué deseas jugar?\n")
+    print("1) Comer fruta.")
+    print("2) Comer comida rápida.")
+    print("3) No comer.")
+    while True:
+        opc = int(input("Ingresa una opción para jugar (1, 2 o 3): "))
+        match opc:
+            case 1:
+                print("Comer furta te volverá más fuerte.")
+            case 2:
+                print("La comida rápida puede ser deliciosa, pero no es buena para tu salud.")
+            case 3:
+                print("Comeremos algo más tarde.")
+                break
+            case _: 
+                print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
