@@ -1,7 +1,7 @@
 # Creación del menú de opciones para tamagochi
 import os
 runProgram = True # Variable de control para el while de la función menu.
-energia, hambre = 0
+# energia, hambre = 0
 
 #Función para mostrar las opciones del menú
 def showMenuOptions():
@@ -92,3 +92,7 @@ def dormir():
                 break
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
+
+# Evalua si la función con la que estamos trabajando es la principal en nuestra ejecución
+if __name__ == "__menu__":
+    menu()
