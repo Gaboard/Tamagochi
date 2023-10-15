@@ -1,6 +1,5 @@
 # Creación del menú de opciones para tamagochi
 import os
-runProgram = True # Variable de control para el while de la función menu.
 energia = 100
 hambre = 100
 name = str(input("Ingresa el nombre de tu tamagochi: "))
