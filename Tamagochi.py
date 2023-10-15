@@ -3,7 +3,7 @@ import os
 runProgram = True # Variable de control para el while de la función menu.
 energia = 100
 hambre = 0
-
+name = ""
 #Función para imprimir el status actual
 def status():
     print(f"Tu energía actual es: {energia}%")
@@ -21,7 +21,7 @@ def showMenuOptions():
 
 # Función para el submenú JUGAR
 def play():
-    global energia, hambre
+    global energia, hambre, name
     while energia>30 and hambre<30:
         status()
         print("¿A qué deseas jugar?\n")
@@ -31,24 +31,24 @@ def play():
         opc = int(input("Ingresa una opción para jugar (1, 2 o 3): "))
         match opc:
             case 1:
-                print("Jugar al frifayer te hará gritar como niño rata.\n")
+                print(f"Jugar al frifayer hará que {name} girte como niño rata.\n")
                 energia = energia-20
                 hambre = hambre+10
                 os.system("cls")
             case 2:
-                print("Jugar a romper tu PR en press banca te podnrá mamadisimo hdsptm.\n")
+                print(f"Jugar a que {name} rompa su PR en press banca lo pondrá mamadisimo hdsptm.\n")
                 energia = energia-30
                 hambre =  hambre+30
                 os.system("cls")
             case 3:
-                print("Jugaremos más tarde.\n")
+                print("Jugar más tarde.\n")
                 break
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): \n")
 
 #Función para el submenú COMER
 def comer():
-    global energia, hambre
+    global energia, hambre, name
     while energia>15 and hambre>0:
         status()
         print("¿Qué deseas jugar?\n")
@@ -58,24 +58,24 @@ def comer():
         opc = int(input("Ingresa una opción para jugar (1, 2 o 3): "))
         match opc:
             case 1:
-                print("Comer la prote + el preworkput te pondrá mamadismo hdsptm.")
+                print(f"Comer la prote + el preworkout pondrá a {name} mamadismo hdsptm.")
                 energia = energia-15
                 hambre = hambre-30
                 os.system("cls")
             case 2:
-                print("Comer atún + plátano también te pondra mamadismo hdsptm pero sin taquicardias.")
+                print("Comer atún + plátano también pondrá a {name} mamadismo hdsptm pero sin taquicardias.")
                 energia = energia-5
                 hambre = hambre-30
                 os.system("cls")
             case 3:
-                print("Comeremos algo más tarde.")
+                print("Come algo más tarde.")
                 break
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
 
 #Función para el submenú DORMIR
 def dormir():
-    global energia, hambre
+    global energia, hambre, name
     while energia>0 and hambre<30:
         status()
         print("¿Qué tanto tiempo deseas dormir?\n")
@@ -85,17 +85,17 @@ def dormir():
         opc = int(input("Ingresa una opción para jugar (1, 2 o 3): "))
         match opc:
             case 1:
-                print("Dormir 1 hora sin alarma hará que duermas alrededor de 3 horas xd")
+                print(f"Dormir 1 hora sin alarma hará que {name} duerma alrededor de 3 horas xd")
                 hambre = hambre+10
                 energia = energia+50
                 os.system("cls")
             case 2:
-                print("Dormir toda la noche sin pensar en ella hará que recuperes toda tu energía")
+                print(f"Dormir toda la noche sin pensar en ella hará que {name} recupere toda su energía")
                 hambre = hambre+30
                 energia = 100
                 os.system("cls")
             case 3:
-                print("Dormiremos más tarde.")
+                print(f"Dormir a {name} más tarde.")
                 break
             case _: 
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
@@ -104,6 +104,7 @@ def dormir():
 def menu():
     global runProgram # Llamamos de forma global a la variable runProgram.
     print(".: Bienvenido al menú de tamagochi :.")
+    name = str(input("Ingresa el nombre de tu tamagochi: "))
 
     while runProgram:
         showMenuOptions() # Invocamos la función para que el usuario vea las opciones.
@@ -114,21 +115,21 @@ def menu():
                 if energia>30 and hambre<30:
                     play()
                 else:
-                    print(f"Tu energía: {energia}% o hambre: {hambre}% , no son suficientes para jugar ahora.")
+                    print(f"La energía de {name}: {energia}% o hambre: {hambre}% , no son suficientes para jugar ahora.")
                     print("Descansa y/o come un poco para que puedas jugar.")
             case 2:
                 os.system("cls")
                 if energia>15 and hambre>0:
                     comer()
                 else:
-                    print(f"Tu energía: {energia}%, no es suficiente para comer ahora.")
+                    print(f"La energía de {name}: {energia}%, no es suficiente para comer ahora.")
                     print("Descansa un poco para que puedas comer.")
             case 3:
                 os.system("cls")
                 if energia>0 and hambre>30:
                     dormir()
                 else:
-                    print(f"Tu hambre: {hambre}% , es demasiado baja para dormir ahora.")
+                    print(f"El hambre de {name}: {hambre}% , es demasiado baja para dormir ahora.")
                     print("Come un poco para que puedas dormir.")
             case 4:
                 os.system("cls")
