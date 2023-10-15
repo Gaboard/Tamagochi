@@ -22,7 +22,7 @@ def showMenuOptions():
 # Función para el submenú JUGAR
 def play():
     global energia, hambre, name
-    while energia>30 and hambre>30:
+    while energia>10 and hambre>10:
         if hambre > 100:
             hambre = 100
         if energia > 100:
@@ -46,15 +46,17 @@ def play():
                 hambre =  hambre-30
                 os.system("cls")
             case '3':
+                os.system("cls")
                 print("Jugar más tarde.\n")
                 break
             case _: 
+                os.system("cls")
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): \n")
 
 #Función para el submenú COMER
 def comer():
     global energia, hambre, name
-    while energia>15 and hambre>0:
+    while energia>=10 and hambre>=10:
         if hambre > 100:
             hambre = 100
         if energia > 100:
@@ -78,15 +80,17 @@ def comer():
                 hambre = hambre+30
                 os.system("cls")
             case '3':
+                os.system("cls")
                 print("Come algo más tarde.")
                 break
             case _: 
+                os.system("cls")
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
 
 #Función para el submenú DORMIR
 def dormir():
     global energia, hambre, name
-    while energia>0 and hambre<30:
+    while energia>0 and hambre>10:
         if hambre > 100:
             hambre = 100
         if energia > 100:
@@ -102,54 +106,57 @@ def dormir():
             case '1':
                 print(f"Dormir 1 hora sin alarma hará que {name} duerma alrededor de 3 horas xd")
                 energia = energia+50
-                hambre = hambre-10
+                hambre = hambre+10
                 os.system("cls")
             case '2':
                 print(f"Dormir toda la noche sin pensar en ella hará que {name} recupere toda su energía")
                 energia = 100
-                hambre = hambre-30
+                hambre = hambre+30
                 os.system("cls")
             case '3':
+                os.system("cls")
                 print(f"Dormir a {name} más tarde.")
                 break
-            case _: 
+            case _:
+                os.system("cls")
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, o 3): ")
 
 # Función para interactuar con las opciones del menú.
 def menu():
-    global runProgram, hambre, energia, name # Llamamos de forma global a la variables del programa
+    global runProgram, hambre, energia, name # Llamamos de forma global a las variables del programa
     print(".: Bienvenido al menú de tamagochi :.")
-    while runProgram:
+    while energia>0 or hambre>0:
         showMenuOptions() # Invocamos la función para que el usuario vea las opciones.
-        opc = int(input("Ingresa una opción (1, 2 , 3 , 4 o 5):"))
+        opc = input("Ingresa una opción (1, 2 , 3 , 4 o 5):")
         match opc:
-            case 1:
+            case '1':
                 os.system("cls")
                 if energia>=30 and hambre>=30:
                     play()
                 else:
                     print(f"La energía de {name}: {energia}% o hambre: {hambre}% , no son suficientes para jugar ahora.")
                     print("Descansa y/o come un poco para que puedas jugar.")
-            case 2:
+            case '2':
                 os.system("cls")
                 if energia>=10 and hambre>=0:
                     comer()
                 else:
                     print(f"La energía de {name}: {energia}%, no es suficiente para comer ahora.")
                     print("Descansa un poco para que puedas comer.")
-            case 3:
+            case '3':
                 os.system("cls")
-                if energia>0 and hambre>=30:
+                if energia>0 and hambre>=10:
                     dormir()
                 else:
                     print(f"El hambre de {name}: {hambre}% , es demasiado baja para dormir ahora.")
                     print("Come un poco para que puedas dormir.")
-            case 4:
+            case '4':
                 os.system("cls")
                 status()
-            case 5:
+            case '5':
                 print("Hasta luego")
-                runProgram = False
+                energia = 0
+                break
             case _:
                 os.system("cls")
                 print("ERROR. Opción no válida. Ingresa una opción correcta (1, 2, 3, ,4 o 5): ")
