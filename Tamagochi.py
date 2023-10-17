@@ -35,15 +35,15 @@ def play():
         opc = input("Ingresa una opción para jugar (1, 2 o 3): ")
         match opc:
             case '1':
+                os.system("cls")
                 print(f"Jugar al frifayer hará que {name} girte como niño rata.\n")
                 energia = energia-20
                 hambre = hambre-10
-                os.system("cls")
             case '2':
+                os.system("cls")
                 print(f"Jugar a que {name} rompa su PR en press banca lo pondrá mamadisimo hdsptm.\n")
                 energia = energia-30
                 hambre =  hambre-30
-                os.system("cls")
             case '3':
                 os.system("cls")
                 print("Jugar más tarde.\n")
@@ -69,15 +69,15 @@ def comer():
         opc = input("Ingresa una opción para jugar (1, 2 o 3): ")
         match opc:
             case '1':
+                os.system("cls")
                 print(f"Comer la prote + el preworkout pondrá a {name} mamadismo hdsptm.")
                 energia = energia-10
                 hambre = hambre+30
-                os.system("cls")
             case '2':
+                os.system("cls")
                 print("Comer atún + plátano también pondrá a {name} mamadismo hdsptm pero sin taquicardias.")
                 energia = energia-5
                 hambre = hambre+30
-                os.system("cls")
             case '3':
                 os.system("cls")
                 print("Come algo más tarde.")
@@ -103,15 +103,15 @@ def dormir():
         opc = input("Ingresa una opción para jugar (1, 2 o 3): ")
         match opc:
             case '1':
+                os.system("cls")
                 print(f"Dormir 1 hora sin alarma hará que {name} duerma alrededor de 3 horas xd")
                 energia = energia+50
                 hambre = hambre+10
-                os.system("cls")
             case '2':
+                os.system("cls")
                 print(f"Dormir toda la noche sin pensar en ella hará que {name} recupere toda su energía")
                 energia = 100
-                hambre = hambre+30
-                os.system("cls")
+                hambre = hambre+30 
             case '3':
                 os.system("cls")
                 print(f"Dormir a {name} más tarde.")
